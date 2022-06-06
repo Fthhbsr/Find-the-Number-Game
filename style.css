@@ -16,8 +16,39 @@ body {
 }
 
 .container {
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+h1 {
+  font-size: 3rem;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+.aciklama {
+  height: 5rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  height: 5rem;
+}
+
+#guess-number {
+  height: 2.5rem;
+  width: 5rem;
+  text-align: center;
+  font-size: 1.5rem;
+  margin: auto;
+}
+
+#submit {
+  margin: auto;
+  height: 2.7rem;
+  width: 5rem;
 }

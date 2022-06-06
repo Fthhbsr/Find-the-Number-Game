@@ -3,9 +3,9 @@ let max = 100;
 
 const randomNum = Math.floor(Math.random() * 100) + 1;
 console.log(randomNum);
-let guess = Number(
-  prompt(`Lütfen 1 ile 100 arasındaki sayımızı tahmin ediniz:`)
-);
+// let guess = Number(
+//   prompt(`Lütfen 1 ile 100 arasındaki sayımızı tahmin ediniz:`)
+// );
 
 const guessGame = function () {
   //   console.log(guess);
