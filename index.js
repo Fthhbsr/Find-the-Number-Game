@@ -10,6 +10,7 @@ let counter = 0;
 
 const randomNum = Math.floor(Math.random() * 100) + 1;
 // console.log(randomNum);
+input.focus();
 
 submit.addEventListener("click", () => {
   const guess = input.value;
