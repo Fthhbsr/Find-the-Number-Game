@@ -4,18 +4,32 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+    />
     <link rel="stylesheet" href="./style.css" />
     <title>GUESS THE NUMBER</title>
   </head>
   <body>
     <div class="container">
       <h1>GUESS THE NUMBER</h1>
-      <div class="aciklama"><p></p></div>
-      <form class="form" action="#">
+      <div class="aciklama">
+        <p>Lütfen 1-100 arasındaki tahmininizi giriniz.</p>
+      </div>
+      <!-- <form class="form" action="#">
         <input id="guess-number" type="number" />
         <input id="submit" type="submit" value="Check" />
-      </form>
+      </form> -->
+      <div class="form">
+        <input id="guess-number" type="number" />
+        <button id="submit" type="button" class="btn btn-primary">Check</button>
+        <button id="again" type="button" class="btn btn-success">
+          PLAY AGAIN
+        </button>
+      </div>
     </div>
+    <p id="footer">@designed by fthhbsr</p>
     <script src="./index.js"></script>
   </body>
 </html>

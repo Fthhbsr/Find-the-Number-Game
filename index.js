@@ -1,38 +1,45 @@
 let min = 1;
 let max = 100;
+let input = document.getElementById("guess-number");
+let submit = document.getElementById("submit");
+let aciklama = document.querySelector("p");
+let again = document.getElementById("again");
+let body = document.querySelector("body");
+let header = document.querySelector("h1");
+let counter = 0;
 
 const randomNum = Math.floor(Math.random() * 100) + 1;
-console.log(randomNum);
-// let guess = Number(
-//   prompt(`Lütfen 1 ile 100 arasındaki sayımızı tahmin ediniz:`)
-// );
+// console.log(randomNum);
 
-const guessGame = function () {
-  //   console.log(guess);
-  //   console.log(typeof guess == "number");
-  if (guess > 0 && guess < 101 && typeof guess == "number" && !(guess % 1)) {
+submit.addEventListener("click", () => {
+  const guess = input.value;
+  counter++;
+  input.value = "";
+  input.focus();
+  if (guess > 1 && guess < 101) {
     if (randomNum == guess) {
-      alert(`**Tebrikler** ${randomNum} sayısını buldunuz.`);
+      header.innerHTML = `**Tebrikler** ${counter}. hakkınızda ${randomNum} sayısını buldunuz.`;
+      header.style.backgroundColor = "black";
+      aciklama.style.display = "none";
+      submit.style.display = "none";
+      body.style.backgroundImage = "url(./img/tebrik.jpg)";
+      body.style.color = "white";
+      again.style.display = "inline";
+      input.style.display = "none";
     } else if (randomNum > guess) {
       min = guess;
-      guess = Number(
-        prompt(
-          `Tahmininizi artırın.${min} ile ${max} arasında bir tahmin giriniz.`
-        )
-      );
-      guessGame();
+      aciklama.innerHTML = `Tahmininizi artırın.${min} ile ${max} arasında bir tahmin giriniz.`;
     } else if (randomNum < guess) {
       max = guess;
-      guess = Number(
-        prompt(
-          `Tahmininizi azaltın.${min} ile ${max} arasında bir tahmin giriniz.`
-        )
-      );
-      guessGame();
+      aciklama.innerHTML = `Tahmininizi azaltın.${min} ile ${max} arasında bir tahmin giriniz.`;
     }
   } else {
-    guess = Number(prompt(`Lütfen 1 ile 100 arasında bir tam sayı giriniz!`));
-    guessGame();
+    aciklama.innerHTML = `Lütfen 1 ile 100 arasında bir tam sayı giriniz!`;
   }
-};
-// guessGame();
+});
+
+window.addEventListener("load", (event) => {
+  again.onclick = function () {
+    location.reload(true);
+  };
+});
